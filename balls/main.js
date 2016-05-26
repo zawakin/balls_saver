@@ -127,14 +127,19 @@ window.onload = function(){
 	stage00(ball, wall);
 //レンダリング処理を呼び出す-----------------------------------------------------------------------------------------------
 
+	// var mode = MODE.SAVE;
 	var mode = MODE.LOAD;
-	var ballsIO = new BallsIO(mode,500);
+	var ballsIO = new BallsIO(mode,1000);
+	// console.log((ball));
+	// console.log(wall);
+	// run = false;
 
 (function(){
 	//カウンターの値をインクリメントする
 	counter++;
 
 	ballsIO.next(counter);
+	// if(counter==200) ballsIO.save_drive_recorder();
 
 	if(keyCode1[32] && !keyCode2[32]) pauseFlag = !pauseFlag;
 	if(!pauseFlag){
